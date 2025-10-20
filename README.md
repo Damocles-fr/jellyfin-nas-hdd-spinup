@@ -71,7 +71,7 @@ Verify it’s running (expect **two lines** → parent + worker `tail -f`):
 ps | grep '[s]pinup_ws_login.sh'
 ```
 4. Reboot
-Let disks spindown, then open Jellyfin from **WAN/4G** — the watcher should pre‑wake HDDs on the **home** screen.
+5. Let disks spindown, then open Jellyfin from **WAN/4G** — the watcher should pre‑wake HDDs on the **home** screen.
 
 ---
 

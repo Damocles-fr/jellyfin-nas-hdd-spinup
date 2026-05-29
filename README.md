@@ -19,7 +19,7 @@ This **bypasses SSD/RAM cache** (which would otherwise satisfy file reads withou
 
 - **Tested:** QNAP **HS-264**, QTS 5.x, Jellyfin **.qpkg**, SSH as the real **admin** (PuTTY).
 - **Storage:** QNAP **TR-004** enclosure.
-- **Should also work** on similar NAS models/firmware.
+- **Should also work** on similar NAS models/firmware and docker Jellyfin.
 - Requires `sg_start` (from `sg3_utils`). Most QTS builds ship it; if not, install or copy `sg_start` accordingly.
 
 > The watcher performs **no writes** and **no raw reads** on your data volume. It only issues **START UNIT** to the member disks. This is intentionally conservative to avoid the EXT4 read-only remounts seen with naive "dd" wake techniques.

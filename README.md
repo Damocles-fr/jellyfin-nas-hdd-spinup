@@ -36,7 +36,7 @@ Edit the header of `bin/spinup_ws_login.sh` **before** running `install.sh` (or 
 - `BOOT_WAIT` - **minimum uptime** (seconds) before doing anything. Default: `300` (5 minutes)
 - `ALLOW_PRIVATE` - `0` = only WAN clients (default), `1` = also trigger for LAN/private IPs
 - `TRIGGER_PATTERN` - grep-E pattern for Jellyfin log lines. Default: `WebSocketManager: WS ".*" request`
-- `FORCE_MD` - set to e.g. `md3 md2` to force both md3 and md2 (others HDDs group), to force a specific or multiple md array to wake instead of auto-detecting the largest data md
+- `FORCE_MD` - if empty, auto-detecting the largest data md. Set to force specific md array to wake instead (others HDDs group). E.g. `md3 md2` to force both md3 and md2.
 - `FALLBACK_MD_READ` - keep `0` (OFF). Tiny md read (4K). Set `1` only if `sg_start` alone does not wake on your box.
 
 ### Custom install paths

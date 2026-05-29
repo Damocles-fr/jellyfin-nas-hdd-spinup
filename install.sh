@@ -63,7 +63,7 @@ cat >> "$QPKG_CONF" << 'EOF'
 [JellyfinHDDSpinup]
 Name = JellyfinHDDSpinup
 Display_Name = Jellyfin HDD Spinup
-Version = 1.0.3
+Version = 1.0.5
 Build = 20251002
 Author = Community
 QPKG_File = jellyfin-hdd-spinup.qpkg

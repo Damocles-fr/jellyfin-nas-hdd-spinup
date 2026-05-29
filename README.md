@@ -138,10 +138,11 @@ README.md                     # this file
 
 The installer also creates `cron_guard.sh` inside the install directory (`$DEST`); it is generated on the NAS, not shipped in the repo.
 
----
+## Transparency
+
+- Some fixes and improvements were assisted by LLM tools (Claude Pro) since the last version.
 
 ## GitHub
 
-```
 https://github.com/Damocles-fr/
-```
+

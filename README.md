@@ -140,7 +140,7 @@ The installer also creates `cron_guard.sh` inside the install directory (`$DEST`
 
 ## Transparency
 
-- Some fixes and improvements were assisted by LLM tools (Claude Pro) since the last version.
+- Fixes and improvements were assisted by LLM tools (Claude Pro) since the last version.
 
 ## GitHub
 

@@ -50,8 +50,8 @@ Edit the header of `bin/spinup_ws_login.sh` **before** running `install.sh` (or 
 - `BOOT_WAIT` — **minimum uptime** (seconds) before doing anything. Default: `300` (5 minutes)
 - `ALLOW_PRIVATE` — `0` = only WAN clients (default), `1` = also trigger for LAN/private IPs
 - `TRIGGER_PATTERN` — grep‑E pattern for Jellyfin log lines. Default: `WebSocketManager: WS ".*" request`
-- `FORCE_MD` — set to e.g. `md3` to force which md array to wake instead of auto‑detecting the largest data md
-- `FALLBACK_MD_READ` — keep `0` (OFF). Set `1` only if `sg_start` alone doesn’t wake on your box.
+- `FORCE_MD` — set to e.g. `md3 md2` to force both md3 and md2, force specific or multiple md array to wake instead of auto‑detecting the largest data md
+- `FALLBACK_MD_READ` — keep `0` (OFF). Tiny md read (4K). Set `1` only if `sg_start` alone doesn’t wake on your box.
 
 Keep the **cooldown** if you broaden triggers to avoid unnecessary work.
 
@@ -115,7 +115,6 @@ install.sh                    # idempotent installer (/etc/config + QPKG stub + 
 uninstall.sh                  # clean removal (kills watcher, removes cron guard, removes QPKG and files)
 tools/test_detect.sh          # detect WAN WebSocket “request” lines (no spin-up)
 tools/test_spinup_manual.sh   # manual wake: SCSI START UNIT only (no reads)
-LICENSE                       # MIT
 README.md                     # this file
 ```
 
@@ -126,9 +125,3 @@ README.md                     # this file
 ```
 https://github.com/Damocles-fr/
 ```
-
----
-
-## License
-
-MIT — see `LICENSE`.

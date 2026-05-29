@@ -2,16 +2,15 @@
 
 Spin up your **NAS hard drives** automatically **right after a remote client reaches Jellyfin's home screen** so the first **Play** is fast.
 
-This tiny watcher tails Jellyfin logs for `WebSocketManager: WS "IP" request` and, for **public (WAN) IPs**, immediately issues a **read-only wake**:
-- Triggers **SCSI START UNIT** (`sg_start --start`) on the **member disks of your data RAID** (auto-detected from `/proc/mdstat`).
-- **No filesystem writes** and **no block reads** - avoids SSD-cache traps and reduces the risk of "aborted command / read-only remounts".
-- Built-in **cooldown** (default 150s) to prevent repeated wake-ups.
-- **Boot wait** (default 300s, about 5 minutes): the watcher self-delays after NAS startup to let QNAP services settle.
-
-This **bypasses SSD/RAM cache** (which would otherwise satisfy file reads without spinning the disks) so the HDDs are already awake when you hit **Play**.
-
-> **Not triggered on the login page** - it fires right after the WebSocket is established (typically on the **home** page).
-> **LAN optional** - by default only WAN clients trigger; LAN can be enabled.
+This tiny watcher tails Jellyfin logs for `WebSocketManager: WS "IP" request` to spin-up HDDs
+- Triggers **SCSI START UNIT** (`sg_start --start`) on the **member disks of your data RAID**
+- **No filesystem writes** and **no block reads** - reduces the risk of "aborted command / read-only remounts".
+- **bypasses SSD/RAM cache** (which would otherwise satisfy file reads without spinning the disks).
+- Built-in **cooldown** (default 150s).
+- **Boot wait** (default 300s): the watcher self-delays after NAS startup to let QNAP services settle.
+- **Not triggered on the login page** - it fires right after the WebSocket is established (typically on the **home** page).
+- **LAN optional** - by default only WAN clients trigger; LAN can be enabled.
+- Auto-detecting the largest data md. Support specific md array to wake instead (others HDDs group)
 
 ---
 

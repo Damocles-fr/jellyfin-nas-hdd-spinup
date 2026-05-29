@@ -84,7 +84,7 @@ Stop **"Jellyfin HDD Spinup"** app in QTS, then :
 cd /share/Public/jellyfin-hdd-spinup
 sh ./uninstall.sh
 ```
-Removes the watcher, the cron guard, the QPKG stub (App Center item), and deletes `/etc/config/jellyfin-hdd-spinup/` and `<apps-dir>/.qpkg/JellyfinHDDSpinup/`.
+This removes the watcher, the cron guard, the QPKG stub (App Center item), and deletes `/etc/config/jellyfin-hdd-spinup/` and `<apps-dir>/.qpkg/JellyfinHDDSpinup/`.
 On some systems **"Jellyfin HDD Spinup"** in QTS App Center may still appear, just click remove.
 
 > If you installed with custom paths, pass the same variables to the uninstaller, e.g.
@@ -110,7 +110,7 @@ cd /share/Public/jellyfin-hdd-spinup
 sh tools/test_spinup_manual.sh
 ```
 This **only** sends SCSI START UNIT to the detected member disks. **It does not read** from md or files.
-To target specific arrays, set `FORCE_MD` at the top of the script (e.g. `FORCE_MD="md3 md2"`).
+To target specific arrays, set `FORCE_MD` at the top of the script (e.g. `FORCE_MD="md3"`).
 
 ---
 

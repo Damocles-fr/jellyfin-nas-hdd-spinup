@@ -69,8 +69,9 @@ Verify it is running (expect **two lines**):
 ```sh
 ps | grep '[s]pinup_ws_login.sh'
 ```
-4. Close SSH session, in QTS you will have **"Jellyfin HDD Spinup"** app, stop it then launch it again (important).
-5. Let disks spin down, then open Jellyfin from **WAN/4G** - the watcher should pre-wake the HDDs on the home screen.
+4. Close SSH session, in QTS you will have **"Jellyfin HDD Spinup"** app
+5. Stop **"Jellyfin HDD Spinup"** QTS App, then launch it again (important).
+6. Let disks spin down, then open Jellyfin from **WAN/4G** - the watcher should pre-wake the HDDs on the home screen.
 
 ---
 

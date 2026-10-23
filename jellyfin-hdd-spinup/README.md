@@ -4,7 +4,7 @@ Spin up your **NAS hard drives** automatically **right after a remote client rea
 
 This tiny watcher tails Jellyfin logs for `WebSocketManager: WS "IP" request` to spin-up HDDs
 - Triggers **SCSI START UNIT** (`sg_start --start`) on the **member disks of your data RAID**
-- **No filesystem writes** and **no block readas** - reduces the risk of "aborted command / read-only remounts".
+- **No filesystem writes** and **no block reads** - reduces the risk of "aborted command / read-only remounts".
 - **bypasses SSD/RAM cache** (which would otherwise satisfy file reads without spinning the disks).
 - Built-in **cooldown** (default 150s).
 - **Boot wait** (default 300s): the watcher self-delays after NAS startup.
